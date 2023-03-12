@@ -4,71 +4,81 @@
       "id": "1",
       "firstName": "Romin",
       "lastName": "Irani",
-      "balance": 4455,
-      "role": "user",
+      "balance": 3455,
+      "role": "admin",
       "emailAddress": "rk@gmail.com",
       "password": "12345678"
     },
     {
-      "id": "2",
-      "firstName": "shyam",
-      "lastName": "kulkarni",
-      "balance": 2000,
-      "role": "admin",
-      "emailAddress": "sk@gmail.com",
-      "password": "12345678"
+      "email": "rs@gmail.com",
+      "password": "asdfghjkl",
+      "firstName": "Rakhi ",
+      "lastName": "Sawant",
+      "role": "user",
+      "balance": 300,
+      "id": "IqDBmbp"
     },
     {
-      "id": "3",
-      "firstName": "prachi",
-      "lastName": "r",
-      "balance": 2000,
-      "role": "Admin",
-      "emailAddress": "pr@gmail.com",
-      "password": "12345678"
+      "firstName": "Akshay",
+      "lastName": "Bhaiyya",
+      "balance": "3000",
+      "id": "FARmqRC"
+    },
+    {
+      "firstName": "Hema",
+      "lastName": "Malini",
+      "balance": "400",
+      "id": "OwziaEp"
+    },
+    {
+      "firstName": "Prachi",
+      "lastName": "R",
+      "balance": "4000",
+      "id": "kwehG6t"
     }
   ],
   "items": [
     {
-      "name": "Dal Khichdi",
-      "price": 100,
-      "quantity": 9,
-      "id": 1
+      "name": "Zuccini ",
+      "price": "400",
+      "quantity": 19,
+      "id": 3
     },
     {
-      "id": 2,
-      "name": "Biryani",
-      "price": 100,
-      "quantity": 10
+      "name": "Pasta",
+      "price": "2000",
+      "quantity": "12",
+      "id": 4
     },
     {
-      "id": 3,
-      "name": "Methi Matar Malai",
-      "price": 100,
-      "quantity": 10
-    },
-    {
-      "id": 4,
-      "name": "Paneer Kofta",
-      "price": 100,
-      "quantity": 10
+      "name": "Pizza",
+      "price": "300",
+      "quantity": "40",
+      "id": 5
     }
   ],
   "daySpecial": [
     {
-      "name": "Paneer Kofta",
-      "price": 100,
-      "quantity": 10,
+      "name": "Zuccini ",
+      "price": "400",
+      "quantity": "20",
       "id": 1
     }
   ],
   "transactions": [
     {
-      "employeeID": "1",
-      "eventTime": "Thu Mar 09 2023",
-      "amount": 100,
-      "name": "Dal Khichdi",
+      "employeeID": "2",
+      "eventTime": "Sun Mar 12 2023",
+      "amount": "300",
+      "name": "Alfredo Pasta",
       "id": 1
+    },
+    {
+      "employeeID": "1",
+      "eventTime": "Sun Mar 12 2023",
+      "amount": "400",
+      "name": "Zuccini ",
+      "id": 2
     }
   ]
 }

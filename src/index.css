@@ -8,7 +8,9 @@ body {
 
     /* background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%); */
 
-    background: #ffffff;
+    background-color: #ad1813;
+background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
   
 }

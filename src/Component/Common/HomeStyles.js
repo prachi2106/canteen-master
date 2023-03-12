@@ -12,6 +12,7 @@ text-align : center;
 letter-spacing : 0.1em;
 font-family: 'Hanuman', serif;
 font-size : 3em;
+display: block;
 `
 
 export const NameTag = styled.h1`
@@ -25,4 +26,7 @@ font-size : 3em;
 export const Image = styled.img`
 width : 70%;
 height : 60%;
+`
+export const BalanceTag = styled.h2`
+text-align : center;
 `

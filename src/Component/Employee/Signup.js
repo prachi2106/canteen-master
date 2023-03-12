@@ -2,8 +2,8 @@ import axios from "axios";
 import { Formik } from "formik";
 import { useNavigate } from "react-router";
 import * as Yup from "yup";
-import { useSnackbar } from "notistack";
-import "./Login.css";
+
+import "./Signup.css";
 
 const schema = Yup.object().shape({
   email: Yup.string()
@@ -12,30 +12,29 @@ const schema = Yup.object().shape({
   password: Yup.string()
     .required("Password is a required field")
     .min(8, "Password must be at least 8 characters"),
+    firstName: Yup.string()
+    .required("This is a required field"),
+    lastName: Yup.string()
+    .required("This is a required field")
 });
 
-const Login = () => {
-  const { enqueueSnackbar } = useSnackbar();
-
+const Signup = () => {
   const navigate = useNavigate();
   return (
-    <div className="loginBody">
+    <div className="SignupBody">
       <Formik
         validationSchema={schema}
-        initialValues={{ email: "", password: "" }}
+        initialValues={{ email: "", password: "", firstName : "", lastName : "", role :"user", balance : "500" }}
         onSubmit={(values) => {
           axios
-            .get("http://localhost:3333/Employees?q=" + values.email)
+            .post("http://localhost:3333/Employees" , values)
             .then((response) => {
-              if(response.data.length==1){
-                sessionStorage.setItem("User" , JSON.stringify( response.data[0]))
+              if(response.data){
+                sessionStorage.setItem("User" , JSON.stringify(response.data))
                 navigate("/home");
               }
-              else{
-                enqueueSnackbar("Username or password is incorrect or Please sign up first", {variant : "error"})
-              }
             }).catch(error =>{
-              enqueueSnackbar("Username or password is incorrect or Please sign up first", {variant : "error"})
+              
             })
         }}
       >
@@ -47,12 +46,47 @@ const Login = () => {
           handleBlur,
           handleSubmit,
         }) => (
-          <div className="login">
+          <div className="Signup">
             <div className="form">
               {/* Passing handleSubmit parameter tohtml form onSubmit property */}
               <form noValidate onSubmit={handleSubmit}>
-                <span>Login</span>
+                <span>Signup</span>
                 {/* Our input html with passing formik parameters like handleChange, values, handleBlur to input properties */}
+                {/* <input
+                  type="text"
+                  name="user"
+                  value={values.role}
+                  onBlur={handleBlur}
+                  className="form-control inp_text"
+                  id="user"
+                  readOnly
+                /> */}
+                <input
+                  type="text"
+                  name="firstName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.firstName}
+                  placeholder="Enter first name"
+                  className="form-control inp_text"
+                  id="firstName"
+                />
+                <p className="error">
+                  {errors.firstName && touched.firstName && errors.firstName}
+                </p>
+                <input
+                  type="text"
+                  name="lastName"
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  value={values.lastName}
+                  placeholder="Enter last name"
+                  className="form-control inp_text"
+                  id="lastName"
+                />
+                <p className="error">
+                  {errors.lastName && touched.lastName && errors.lastName}
+                </p>
                 <input
                   type="email"
                   name="email"
@@ -82,7 +116,7 @@ const Login = () => {
                   {errors.password && touched.password && errors.password}
                 </p>
                 {/* Click on submit button to submit the form */}
-                <button type="submit">Login</button>
+                <button type="submit">Signup</button>
               </form>
             </div>
           </div>
@@ -92,4 +126,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

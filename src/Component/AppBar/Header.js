@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FoodBankIcon from '@mui/icons-material/FoodBank';
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router";
-
+import {HeaderTag, Image, ImageDiv}  from "./HeaderStyles"
 const pages = [
   { tabName: "Employee Portal", tabUrl: "/employee-portal", access: "admin" },
   { tabName: "Item Portal", tabUrl: "/item-portal", access: "admin" },
@@ -50,6 +50,7 @@ function Header() {
   };
 
   return (
+    <>
     <AppBar position="static" color="primary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -150,18 +151,46 @@ function Header() {
           {!user && (
             <Box sx={{ flexGrow: 0 }}>
               <Button
-                style={{ color: "white" }}
+                style={{ color: "black", fontWeight : "bold"}}
                 onClick={() => {
                   navigate("/login");
                 }}
               >
                 Login
               </Button>
+              <Button
+                style={{ color: "black", fontWeight : "bold"}}
+                onClick={() => {
+                  navigate("/signup");
+                }}
+              >
+                Sign Up
+              </Button>
             </Box>
           )}
         </Toolbar>
       </Container>
     </AppBar>
+    {!user && <div>
+      <HeaderTag>Welcome to our Canteen Management System!</HeaderTag>
+      <div style={{display : "flex"}}>
+      <ImageDiv>
+      <Image src="/images/canteen.jpg" alt="canteen" />
+      <Image src="/images/canteen.jpg" alt="canteen" />
+      </ImageDiv>
+      <ImageDiv>
+      <Image src="/images/pasta.jpg" alt="canteen" />
+      <Image src="/images/pasta.jpg" alt="canteen" />
+      </ImageDiv>
+      <ImageDiv>
+      <Image src="/images/indian.jpg" alt="canteen" />
+      <Image src="/images/indian.jpg" alt="canteen" />
+      </ImageDiv>
+
+      </div>
+
+    </div>}
+    </>
   );
 }
 export default Header;

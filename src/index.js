@@ -11,6 +11,8 @@ import ItemPortal from "./Component/Admin/ItemPortal";
 import Transaction from "./Component/Common/Transaction";
 import Menu from "./Component/Employee/Menu";
 import Home from "./Component/Common/Home";
+import Signup from "./Component/Employee/Signup";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
@@ -30,6 +32,7 @@ root.render(
           <Route path="home" element={<Home />} />
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<Signup />}/>
       </Routes>
     </SnackbarProvider>
   </BrowserRouter>
